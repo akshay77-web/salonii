@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asking out saloni</title>
+    <title>Asking out Saloni</title>
     <style>
         p {
             text-align: center;
@@ -13,7 +13,7 @@
         img {
             display: block;
             margin: 0 auto;
-            width: 25%;
+            width: 125%; /* Making the image five times bigger */
         }
         #botao1, #botao2 {
             font-size: 24px;
@@ -22,16 +22,17 @@
         }
         #botao1 {
             position: fixed;
-            top: 70%;
-            left: 55%;
+            top: 80%;
+            left: 40%;
             transform: translate(-50%, -50%);
             background-color: #4CAF50;
             color: white;
         }
         #botao2 {
-            position: absolute;
-            left: 39%;
-            top: 68%;
+            position: fixed;
+            top: 80%;
+            left: 60%;
+            transform: translate(-50%, -50%);
             background-color: #f44336;
             color: white;
         }
@@ -39,25 +40,23 @@
 </head>
 <body>
     <p>Saloni, Can we hang out to Tehri?</p>
-    <!-- Using a known working GIF URL -->
     <img src="https://i.pinimg.com/originals/d5/91/dd/d591ddb2eb3cede03d29c42ecdd1bf24.gif" alt="Fun GIF">
     
     <button id="botao1">YES!</button>
     <button id="botao2">NO</button>
     
     <script>
-        // Event listener for the "NO" button to move it around
+        // Select the "NO" button
         const button2 = document.getElementById('botao2');
-        let positionLeft = 39;
-        let positionTop = 68;
 
+        // Event listener for the "NO" button to move it around
         button2.addEventListener('mouseover', function() {
             // Move the "NO" button to a random larger position
-            positionLeft = Math.random() * (window.innerWidth - this.offsetWidth);
-            positionTop = Math.random() * (window.innerHeight - this.offsetHeight);
-
-            this.style.left = positionLeft + 'px';
-            this.style.top = positionTop + 'px';
+            const newLeft = Math.random() * (window.innerWidth - this.offsetWidth);
+            const newTop = Math.random() * (window.innerHeight - this.offsetHeight);
+            
+            this.style.left = newLeft + 'px';
+            this.style.top = newTop + 'px';
         });
 
         // Event listener for the "YES!" button
