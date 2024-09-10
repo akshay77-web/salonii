@@ -15,16 +15,25 @@
             margin: 0 auto;
             width: 25%;
         }
+        #botao1, #botao2 {
+            font-size: 24px;
+            padding: 15px 30px;
+            cursor: pointer;
+        }
         #botao1 {
             position: fixed;
             top: 70%;
             left: 55%;
             transform: translate(-50%, -50%);
+            background-color: #4CAF50;
+            color: white;
         }
         #botao2 {
             position: absolute;
             left: 39%;
             top: 68%;
+            background-color: #f44336;
+            color: white;
         }
     </style>
 </head>
@@ -39,14 +48,16 @@
     <script>
         // Event listener for the "NO" button to move it around
         const button2 = document.getElementById('botao2');
-        let left = 40;
+        let positionLeft = 39;
+        let positionTop = 68;
+
         button2.addEventListener('mouseover', function() {
-            if (left == 40) {
-                left = 44;
-            } else {
-                left = 40;
-            }
-            this.style.left = left + '%';
+            // Move the "NO" button to a random larger position
+            positionLeft = Math.random() * (window.innerWidth - this.offsetWidth);
+            positionTop = Math.random() * (window.innerHeight - this.offsetHeight);
+
+            this.style.left = positionLeft + 'px';
+            this.style.top = positionTop + 'px';
         });
 
         // Event listener for the "YES!" button
